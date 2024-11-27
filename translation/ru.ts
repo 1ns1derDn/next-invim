@@ -1,5 +1,5 @@
-import test from "../components/ru.json"
+import singIn from "@/components/templates/sing-in/sing-in.ru.json"
 
 export default {
-	...test,
+	...singIn,
 }
