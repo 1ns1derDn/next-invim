@@ -1,6 +1,6 @@
-import { useTranslations } from "next-intl"
+"use client"
+import { SignIn } from "@/components/templates"
 
 export default function SingIn() {
-	const t = useTranslations()
-	return <div>{t("title")}</div>
+	return <SignIn />
 }

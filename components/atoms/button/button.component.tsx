@@ -1,24 +1,20 @@
-import { ElementType, ForwardedRef, forwardRef, memo } from "react"
+import { primary } from "@/fonts"
+import cn from "classnames"
+import { ElementType, ForwardedRef } from "react"
+import styles from "./button.module.css"
 import { ButtonPropsType } from "./button.types"
 
 const defaultElement = "button"
 
-function Component<E extends ElementType = typeof defaultElement>(
-	{ className, children, variant, size, isUpper, as, ...otherProps }: ButtonPropsType<E>,
+export const Button = <E extends ElementType = typeof defaultElement>(
+	{ className, children, as, ...otherProps }: ButtonPropsType<E>,
 	ref: ForwardedRef<HTMLElement>
-) {
+) => {
 	const TagName: ElementType = as || defaultElement
 
 	return (
-		<TagName className={className} ref={ref} {...otherProps}>
-			{children}
+		<TagName className={cn(styles.shared, primary.className)} ref={ref} {...otherProps}>
+			<span>{children}</span>
 		</TagName>
 	)
 }
-
-export const Button = memo(forwardRef(Component)) as <
-	E extends ElementType = typeof defaultElement
->(
-	props: ButtonPropsType<E>,
-	ref?: ForwardedRef<HTMLElement>
-) => ReturnType<typeof Component>

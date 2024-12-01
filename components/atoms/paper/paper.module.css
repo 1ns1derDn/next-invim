@@ -1,0 +1,40 @@
+.paper {
+	position: relative;
+	z-index: 1;
+
+	display: inline-block;
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 1000px;
+	padding: 70px;
+
+	background: linear-gradient(
+		120.75deg,
+		rgb(40 36 91 / 40%) 30.3%,
+		rgb(79 49 128 / 40%) 52.7%,
+		rgb(51 42 94 / 40%) 73.51%
+	);
+
+	border-radius: 5px;
+	box-shadow: 7px 7px 8px 0 #00000026, inset 6px 6px 6px 0 #ffffff14;
+}
+
+.paper::before {
+	position: absolute;
+	z-index: -1;
+
+	padding: 1px;
+
+	background: linear-gradient(
+		100.32deg,
+		rgb(213 92 255 / 31%) 3.87%,
+		rgb(102 108 255 / 20.5%) 97.11%
+	);
+	border-radius: inherit;
+
+	content: "";
+	inset: 0;
+	mask: linear-gradient(#ffffff 0 0) content-box, linear-gradient(#ffffff 0 0);
+	mask-composite: destination-out;
+	mask-composite: exclude;
+}

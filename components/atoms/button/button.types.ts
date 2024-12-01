@@ -1,8 +1,9 @@
-import { ComponentPropsWithoutRef, ElementType } from "react"
+import { ComponentProps, ElementType } from "react"
 
 export type ButtonOwnProps<E extends ElementType = ElementType> = {
 	as?: E
+	variant?: "primary" | "secondary"
 }
 
 export type ButtonPropsType<E extends ElementType> = ButtonOwnProps<E> &
-	Omit<ComponentPropsWithoutRef<E>, keyof ButtonOwnProps>
+	Omit<ComponentProps<E>, keyof ButtonOwnProps>

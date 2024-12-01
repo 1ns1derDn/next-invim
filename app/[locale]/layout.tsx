@@ -3,22 +3,20 @@ import { primary } from "../../fonts"
 import { routing } from "@/i18n/routing"
 import { NextIntlClientProvider } from "next-intl"
 import { getMessages } from "next-intl/server"
-import { notFound } from "next/navigation"
 import "normalize.css/normalize.css"
-import "../../global/styles.scss"
+import "../../global/styles.css"
 import { LocaleType } from "../../types/translate"
 
-export default async function LocaleLayout({
-	children,
-	params,
-}: {
+interface LayoutProps {
 	children: React.ReactNode
 	params: Promise<{ locale: string }>
-}) {
+}
+
+export default async function LocaleLayout({ children, params }: LayoutProps) {
 	const { locale } = await params
 
 	if (!routing.locales.includes(locale as LocaleType)) {
-		notFound()
+		return null
 	}
 
 	const messages = await getMessages()
