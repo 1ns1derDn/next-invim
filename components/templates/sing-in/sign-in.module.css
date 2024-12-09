@@ -1,0 +1,40 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.title {
+	margin-bottom: 35px;
+}
+
+.form {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	max-width: 549px;
+	width: 100%;
+	gap: 33px;
+	margin-bottom: 32px;
+}
+
+.button {
+	margin-top: 21px;
+	max-width: 394px;
+	width: 100%;
+	padding: 30px;
+
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 19.5px;
+}
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	max-width: 549px;
+	width: 100%;
+}

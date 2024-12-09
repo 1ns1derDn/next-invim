@@ -57,16 +57,10 @@
 }
 
 .btn {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border: none;
-	background-color: transparent;
 	z-index: 2;
 	position: absolute;
 	top: 50%;
 	right: 31px;
 	transform: translateY(-50%);
 	cursor: pointer;
-	padding: 0;
 }

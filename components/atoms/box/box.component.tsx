@@ -1,11 +1,10 @@
 import classNames from "classnames"
 import { ElementType } from "react"
-import styles from "./paper.module.css"
-import { PaperProps } from "./paper.types"
+import { PaperProps } from "./box.types"
 
 const defaultElement = "div"
 
-export const Paper = <E extends ElementType = typeof defaultElement>({
+export const Box = <E extends ElementType = typeof defaultElement>({
 	children,
 	as,
 	className,
@@ -14,7 +13,7 @@ export const Paper = <E extends ElementType = typeof defaultElement>({
 	const TagName: ElementType = as || defaultElement
 
 	return (
-		<TagName className={classNames(styles.paper, className)} {...otherProps}>
+		<TagName className={classNames(className)} {...otherProps}>
 			{children}
 		</TagName>
 	)

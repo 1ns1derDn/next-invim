@@ -13,7 +13,7 @@ export const Button = <E extends ElementType = typeof defaultElement>(
 	const TagName: ElementType = as || defaultElement
 
 	return (
-		<TagName className={cn(styles.shared, primary.className)} ref={ref} {...otherProps}>
+		<TagName className={cn(styles.shared, primary.className, className)} ref={ref} {...otherProps}>
 			<span>{children}</span>
 		</TagName>
 	)
